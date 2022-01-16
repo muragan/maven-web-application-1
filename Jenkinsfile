@@ -30,13 +30,7 @@ stage('Fetch code from git')
     deploy adapters: [tomcat9(credentialsId: 'ed4ccace-aed9-4752-b99c-50516be3f882', \
     path: '', url: 'http://172.31.41.180:8080/')], contextPath: null, war: '**/maven-web-application.war'
     }
-    /*
-    stage('EmailNotification')
-    {
-    emailext body: '''Build success for - Job : ${JOB_NAME}, Build.No:${BUILD_NUMBER}
-    Thanks,
-    Murlai''', subject: 'Build success for - Job : ${JOB_NAME}, Build.No:${BUILD_NUMBER}', to: 'muralitest.devops@gmail.com'
-    }*//*
+ /*
     stage('setBuildNum')
     {
         buildName 'pipe-${BUILD_NUMBER}'
