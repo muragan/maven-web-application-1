@@ -1,11 +1,10 @@
-node
-{
-    stage('Fetch code from git')
+node{
+stage('Fetch code from git')
     {
         git branch: 'development', credentialsId: 'a21b5e0b-cf0b-4b9e-a2b2-3c1c30a2dc02', 
         url: 'https://github.com/muragan/maven-web-application-1.git'
     }
-    
+/*    
     stage('Buildpackage')
     {
         sh "${mavenHome}/bin/mvn clean package"
@@ -18,7 +17,8 @@ node
         
     sh "${mavenHome}/bin/mvn clean deploy"
     }
-   
+   */
+    /*
     stage('DeploytoTomcat')
     {
    /*
@@ -26,6 +26,7 @@ node
         sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.241.213:/opt/apache-tomcat-9.0.56/webapps "
         }
     */
+    /*
     deploy adapters: [tomcat9(credentialsId: 'ed4ccace-aed9-4752-b99c-50516be3f882', \
     path: '', url: 'http://172.31.41.180:8080/')], contextPath: null, war: '**/maven-web-application.war'
     }
@@ -35,9 +36,10 @@ node
     emailext body: '''Build success for - Job : ${JOB_NAME}, Build.No:${BUILD_NUMBER}
     Thanks,
     Murlai''', subject: 'Build success for - Job : ${JOB_NAME}, Build.No:${BUILD_NUMBER}', to: 'muralitest.devops@gmail.com'
-    }*/
+    }*//*
     stage('setBuildNum')
     {
         buildName 'pipe-${BUILD_NUMBER}'
     }
+*/
 }
