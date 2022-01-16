@@ -1,6 +1,6 @@
 node
 {
-    def mavenHome = tool name: "maven-3.8.3"
+    def mavenHome = tool name: "maven3.8.3"
     stage('Fetch code from git'){
         git branch: 'development', credentialsId: 'a21b5e0b-cf0b-4b9e-a2b2-3c1c30a2dc02', 
         url: 'https://github.com/muragan/maven-web-application-1.git'
