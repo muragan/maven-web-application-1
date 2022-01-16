@@ -1,4 +1,5 @@
-node{
+node
+  {
     def mavenHome = tool name: "maven-3.8.3"
     stage('Fetch code from git')
     {
